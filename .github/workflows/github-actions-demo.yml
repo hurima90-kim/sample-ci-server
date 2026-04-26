@@ -68,6 +68,6 @@ jobs:
           ssh -i ~/.ssh/ec2_key.pem ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
             cd ~/sample-server
             npm ci
-            pm2 restart sample-ci-server || pm2 start dist/main.js --name sample-server
+            pm2 restart sample-server || pm2 start dist/main.js --name sample-server
             pm2 save
           EOF
